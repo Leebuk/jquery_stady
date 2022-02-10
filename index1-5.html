@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .alert-box{
+            position: relative;
+            padding: 15px; 
+            background-color:aquamarine;
+            border-radius: 10px;  display: none;
+        }
+        .alert-box button { 
+            position: absolute; right: 10px; 
+            background: #fff; border: 0; border: solid 1px #eee; border-radius: 5px; }
+    </style>
+</head>
+<body>
+   <div class="alert-box" id="alert">
+       <p id="text">아이디를 입력안하셨어요.</p>
+       <button id="close">닫기</button>
+   </div>
+   
+   <button onclick="Open('block')">
+       버튼
+   </button>
+   <button onclick="Open2('block')">
+       버튼
+   </button>
+    <script>
+            document.getElementById('close').addEventListener('click', function(){
+                document.getElementById('alert').style.display ='none';
+            });
+    </script>
+</body>
+</html>

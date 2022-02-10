@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .alert-box{
+            position: relative;
+            padding: 15px; 
+            background-color:aquamarine;
+            border-radius: 10px;  display: none;
+        }
+        .alert-box button { 
+            position: absolute; right: 10px; 
+            background: #fff; border: 0; border: solid 1px #eee; border-radius: 5px; }
+    </style>
+</head>
+<body>
+   <div class="alert-box" id="alert">
+       Alert박스
+       <button onclick="document.getElementById('alert').style.display = 'none'">닫기</button>
+   </div>
+   
+   <button onclick="document.getElementById('alert').style.display = 'block'">
+       버튼
+   </button>
+</body>
+</html>
