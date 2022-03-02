@@ -17,24 +17,29 @@
 </head>
 <body>
    <div class="alert-box" id="alert">
-       <p><span id="text">아이디</span>를 입력안하셨어요.</p>
-       <button onclick="Close('none')">닫기</button>
+       <p id="text">아이디를 입력안하셨어요.</p>
+       <button id="close">닫기</button>
    </div>
    
-   <button onclick="Open('block')">
-       버튼
+   <button onclick="Open()">
+       버튼1
    </button>
-   <button onclick="Open2('block')">
-       버튼
+   <button onclick="Open2()">
+       버튼2
    </button>
     <script>
         function Open(on){
             document.getElementById('alert').style.display = on;
+            document.getElementById('text').innerHTML = '아이디를 입력안하셨어요.';
+            document.getElementById('close').style.display = 'none';
         }
         function Open2(on){
             document.getElementById('alert').style.display = on;
-            document.getElementById('text').innerHTML = "비밀번호";
+            document.getElementById('text').innerHTML = '비밀번호를 입력안하셨어요.';
+            document.getElementById('close').style.display = 'none';
         }
+        
+        
     </script>
 </body>
 </html>

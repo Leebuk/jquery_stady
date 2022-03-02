@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+
+    <title>캐러셀 (이미지 슬라이드) 만들기</title>
+  </head>
+    <body> 
+    <style>
+        .slide-container {
+            width: 300vw;
+            transition: all 1s; 
+        }
+        .slide-box {
+          width: 100vw;
+          float: left;
+        }
+        .slide-box img {
+          width: 100%;
+        } 
+    </style>
+    <div style="overflow: hidden">
+        <div class="slide-container">
+          <div class="slide-box">
+            <img src="./img/car1.png">
+          </div>
+          <div class="slide-box">
+            <img src="./img/car2.png">
+          </div>
+          <div class="slide-box">
+            <img src="./img/car3.png">
+          </div>
+        </div>
+     </div> 
+     <button class="slide-1">car1</button>
+     <button class="slide-2">car2</button>
+     <button class="slide-3">car3</button>
+     <button class="prev">prev</button>
+     <button class="next">next</button>
+    
+    <script> 
+        $('.slide-1').on('click', function() {
+          $('.slide-container').css('transform', 'translateX(0vw)');
+        });
+        $('.slide-2').on('click', function() {
+          $('.slide-container').css('transform', 'translateX(-100vw)');
+        });
+        $('.slide-3').on('click', function() {
+          $('.slide-container').css('transform', 'translateX(-200vw)');
+        });
+        
+        var now = 1;
+        
+        $('.next').on('click', function(){
+           $('.slide-container').css('transform', 'translateX(-' + now + '00vw)');
+            now += 1;
+        })
+        $('.prev').on('click', function(){
+           $('.slide-container').css('transform', 'translateX(-' + now + '00vw)');
+            now -= 1;
+        })
+        
+    </script>
+
+  </body>
+</html>
